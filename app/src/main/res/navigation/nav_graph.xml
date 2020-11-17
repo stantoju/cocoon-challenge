@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cocoon.cocoon_challenge.ui.home.HomeFragment"
+        android:label="Top Stories"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment2"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.cocoon.cocoon_challenge.ui.details.DetailsFragment"
+        android:label="Story Details">
+
+        <argument
+            android:name="story"
+            app:argType="com.cocoon.cocoon_challenge.data.model.Story"
+            app:nullable="true" />
+        <argument
+            android:name="bookmark"
+            app:argType="com.cocoon.cocoon_challenge.data.model.Story"
+            app:nullable="true" />
+
+    </fragment>
+</navigation>
